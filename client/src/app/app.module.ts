@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { MatCardModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -12,7 +13,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { routes } from './app.routing';
@@ -20,7 +20,6 @@ import { API_BASE_URL, WS_URL } from './app.tokens';
 import { SearchFormModule } from './shared/components';
 import { SHARED_SERVICES } from './shared/services';
 import { reducers, RouterEffects, SearchEffects } from './store';
-
 
 @NgModule({
   imports: [
@@ -35,7 +34,7 @@ import { reducers, RouterEffects, SearchEffects } from './store';
       stateKey: 'router'
     }),
     StoreDevtoolsModule.instrument({
-      name: 'NgAuction DevTools',
+      name: 'Tinder DevTools',
       logOnly: environment.production
     }),
 
@@ -47,12 +46,11 @@ import { reducers, RouterEffects, SearchEffects } from './store';
      * See: https://github.com/ngrx/platform/blob/master/docs/effects/api.md#forroot
      */
     EffectsModule.forRoot([ RouterEffects, SearchEffects ]),
-
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
     MatToolbarModule,
-
+    MatCardModule,
     SearchFormModule
   ],
   declarations: [

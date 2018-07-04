@@ -7,6 +7,7 @@
     "start": "node build/main.js"
   },
   "dependencies": {
+    "angular-image-slider": "0.0.8",
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "ws": "^4.0.0"

@@ -1,0 +1,59 @@
+<!-- <div class="info__title" fxLayout="row">More items to consider:</div> -->
+
+<!-- <mat-grid-list [cols]="columns$ | async" gutterSize="16px"> -->
+    <!-- <button class=""
+    mat-raised-button
+    color="accent"
+    (click)="prev()">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+<carousel2>
+  <ng-container class="" *ngFor="let target of targets">
+  <ng-container *carouselItem>
+    
+    <a class="tile__content"
+        fxLayout
+        fxLayoutAlign="center center"
+        [routerLink]="['/targets', target.id]">
+
+      <div class="tile__thumbnail"
+            [ngStyle]="{'background-image': 'url(' + urlFor(target) + ')'}"></div>
+    </a>
+    <div class="tile__thumbnail" style= "height:600px;width:600px;"
+    [ngStyle]="{'background-image': 'url(' + urlFor(target) + ')'}"> test </div>
+    
+  </ng-container>
+  </ng-container>
+</carousel2>
+<button class=""
+      mat-raised-button
+      color="accent"
+      (click)="matchRequest();next()">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+    </button> -->
+
+<mat-grid-list [cols]="columns" gutterSize="25px">
+  <mat-grid-tile class="tile" *ngFor="let target of targets">
+      <!-- <button class=""
+      mat-raised-button
+      color="accent"
+      (click)="pass()">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+    </button> -->
+    <a class="tile__content"
+       fxLayout
+       fxLayoutAlign="center center"
+       [routerLink]="['/targets', target.id]">
+
+      <div class="tile__thumbnail"
+           [ngStyle]="{'background-image': 'url(' + urlFor(target) + ')'}"></div>
+    </a>
+    
+      <!-- <button class=""
+              mat-raised-button
+              color="accent"
+              (click)="matchRequest();pass()">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+    </button> -->
+  </mat-grid-tile>
+</mat-grid-list>

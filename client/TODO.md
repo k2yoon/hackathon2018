@@ -1,3 +1,3 @@
 # TODO
 
-1. Add featured product
+1. finish everything

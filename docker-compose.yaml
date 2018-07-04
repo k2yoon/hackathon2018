@@ -1,0 +1,22 @@
+version: "2"
+
+services:
+  api:
+    container_name: hackathon2018-api
+    build:
+      context: "."
+      dockerfile: "server-golang/docker/Dockerfile"
+      args:
+        GIT_COMMIT: "$GIT_COMMIT"
+        BUILD_DATE: "$BUILD_DATE"
+        ENVIRONMENT: "development"
+        DOCKERFILE: "http://gitlab.internal.casalemedia.com/kai.yoon/hackathon2018/blob/${GIT_COMMIT}/server-golang/docker/Dockerfile"
+    ports:
+      - "8080:8080"
+    network_mode: "bridge"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1000k"
+        max-file: "7"
+    restart: "unless-stopped"

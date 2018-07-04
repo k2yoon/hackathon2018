@@ -1,0 +1,12 @@
+{
+	"skills": [
+		{
+			"skillName": "ship command",
+			"mentors": ["kirk", "picard", "janeway"]
+		},
+		{
+			"skillName": "science",
+			"mentors": ["brown", "nye"]
+		}
+	]
+}

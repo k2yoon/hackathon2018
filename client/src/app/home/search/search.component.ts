@@ -2,10 +2,10 @@ import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
-import { Product } from '../../shared/services';
+import { User } from '../../shared/services';
 import { State } from '../store';
-import { SearchProducts } from '../store/actions';
-import { getProductsData } from '../store/reducers';
+import { SearchUsers } from '../store/actions';
+import { getUsersData } from '../store/reducers';
 
 
 @Component({
@@ -15,16 +15,16 @@ import { getProductsData } from '../store/reducers';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchComponent implements OnDestroy {
-  readonly products$: Observable<Product[]>;
+  readonly users$: Observable<User[]>;
   private readonly paramsSubscription: Subscription;
 
   constructor(
     private route: ActivatedRoute,
     private store: Store<State>
   ) {
-    this.products$ = this.store.pipe(select(getProductsData));
+    this.users$ = this.store.pipe(select(getUsersData));
     this.paramsSubscription = this.route.queryParams.subscribe(
-      params => this.store.dispatch(new SearchProducts({ params }))
+      params => this.store.dispatch(new SearchUsers({ params }))
     );
   }
 

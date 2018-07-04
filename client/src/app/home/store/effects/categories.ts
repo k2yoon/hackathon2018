@@ -4,7 +4,7 @@ import { Action } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 
-import { ProductService } from '../../../shared/services';
+import { UserService } from '../../../shared/services';
 import { CategoriesActionTypes, LoadCategoriesSuccess } from '../actions';
 
 
@@ -14,12 +14,12 @@ export class CategoriesEffects {
   loadCategories$: Observable<Action> = this.actions$
     .pipe(
       ofType(CategoriesActionTypes.Load),
-      mergeMap(() => this.productService.getAllCategories()),
+      mergeMap(() => this.userService.getAllCategories()),
       map(categories => new LoadCategoriesSuccess({ categories })),
       catchError(error => {
         // In case of an error there is not much we can do. So we just
         // emit a success action with an empty array. The ALL category
-        // is always present, so users will be able to see the products.
+        // is always present, so users will be able to see the users.
         console.error(`Error while loading categories: ${error}`);
         return of(new LoadCategoriesSuccess({ categories: [] }));
       })
@@ -27,7 +27,7 @@ export class CategoriesEffects {
 
   constructor(
     private readonly actions$: Actions,
-    private readonly productService: ProductService
+    private readonly userService: UserService
   ) {
   }
 }

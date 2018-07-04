@@ -4,16 +4,20 @@ import { Actions, ofType } from '@ngrx/effects';
 import { Subscription } from 'rxjs';
 import { SearchActionTypes } from './store/actions';
 
-
+/**
+ * @title Basic cards
+ */
 @Component({
   selector: 'nga-root',
   styleUrls: [ './app.component.scss' ],
   templateUrl: './app.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class AppComponent implements OnDestroy {
   @ViewChild(MatSidenav) sidenav: MatSidenav;
   private readonly searchActionSubscription: Subscription;
+  // private readonly userId: number= 123;
 
   constructor(private readonly actions$: Actions) {
     this.searchActionSubscription = this.actions$

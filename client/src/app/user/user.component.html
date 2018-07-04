@@ -1,0 +1,19 @@
+<div class="wrapper"
+     fxLayout="column"
+     fxLayout.gt-md="row-reverse">
+
+  <nga-user-detail
+      fxFlex="auto"
+      fxFlex.gt-md="65%"
+      *ngIf="user$ | async as user"
+      [user]="user">
+  </nga-user-detail>
+
+  <nga-user-suggestion
+      fxFlex="auto"
+      fxFlex.gt-md="35%"
+      *ngIf="suggestedUsers$ | async as users"
+      [users]="users">
+  </nga-user-suggestion>
+
+</div>

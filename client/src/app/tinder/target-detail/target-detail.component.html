@@ -1,0 +1,47 @@
+<div class="wrapper"
+     ngClass.lt-md="wrapper--lt-md"
+     ngClass.gt-md="wrapper--gt-md"
+     fxLayout="row"
+     fxLayoutAlign="center"
+     fxLayout.xs="column"
+     fxLayoutAlign.xs="center center">
+
+  <div fxFlex="50%">
+    <img class="thumbnail"
+         [attr.alt]="target.name"
+         [attr.src]="urlFor(target)">
+  </div>
+
+  <div fxFlex="50%" *ngIf="matches$ | async as matches">
+    <div class="info">
+      <h1 class="info__title">{{ target?.name }}</h1>
+      <h3 class="">About Me:</h3>
+      <div class="info__description">{{ target?.intro }}</div>
+      <div class="info__description">
+        Skills want to learn
+        <li *ngFor="let learn of target?.wantsToLearn ">
+          {{ learn }}
+        </li>
+      </div>
+      <div class="info__description">
+          Skills I am Good at
+          <li *ngFor="let skill of target?.knowsWell ">
+            {{ skill }}
+          </li>
+        </div>
+      <!-- <div class="info__description">{{ target?. }}</div> -->
+      <button class="info__bid-button"
+              mat-raised-button
+              color="accent"
+              (click)="matchRequest()">
+        Request Match
+      </button>
+      <!-- <button class="info__bid-button"
+              mat-raised-button
+              color="accent"
+              (click)="pass()">
+        Pass
+      </button> -->
+    </div>
+  </div>
+</div>

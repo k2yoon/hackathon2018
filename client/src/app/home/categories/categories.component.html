@@ -4,11 +4,11 @@
      *ngFor="let c of categories$ | async"
      #rla="routerLinkActive" routerLinkActive
      [active]="rla.isActive"
-     [routerLink]="['/categories', c]">
+     [routerLink]="['/home/categories', c]">
     {{ c | uppercase }}
   </a>
 </nav>
 
 <div class="grid-list-container">
-  <nga-product-grid [products]="products$ | async"></nga-product-grid>
+  <nga-user-grid [users]="users$ | async"></nga-user-grid>
 </div>

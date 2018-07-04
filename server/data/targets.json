@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+	  "name" : "Luigi",
+    "intro" : "Waaaahh LUIGI!",
+    "imageUrl" : "data/img/luigi.jpg",
+    "matches" : [ 2 ],
+    "knowsWell": [
+      "Angular",
+	    "Perl"
+    ],
+	  "wantsToLearn": [
+	    "Communication",
+	    "Golang"
+	  ]
+  },
+  {
+    "id": 2,
+	  "name" : "Mario",
+    "intro" : "Loves Peach",
+    "imageUrl" : "data/img/mario.jpg",
+    "matches" : [ 1 ],
+    "knowsWell": [
+      "Communication",
+	    "Perl"
+    ],
+	  "wantsToLearn": [
+	    "Angular",
+	    "Golang"
+	  ]
+  },
+  {
+    "id": 3,
+	  "name" : "Princess Peach",
+    "intro" : "Royalty. Princess. Just ruling the world.",
+    "imageUrl" : "data/img/princess_peach.jpg",
+    "matches" : [ 4, 5 ],
+    "knowsWell": [
+      "Node",
+      "Java",
+      "C++"
+    ],
+	  "wantsToLearn": [
+	    "Communication",
+	    "Golang"
+	  ]
+  },
+  {
+    "id": 4,
+	  "name" : "Bowser",
+    "intro" : "I wanna conquer the world!!!!!!",
+    "imageUrl" : "data/img/bowser.jpg",
+    "matches" : [ 3 ],
+    "knowsWell": [
+      "Communication",
+      "Golang",
+      "C++"
+    ],
+	  "wantsToLearn": [
+	    "Node"
+	  ]
+  },
+  {
+    "id": 5,
+	  "name" : "Yoshi",
+    "intro" : "I love apples",
+    "imageUrl" : "data/img/yoshi.jpg",
+    "matches" : [ 3 ],
+    "knowsWell": [
+      "Golang"
+    ],
+	  "wantsToLearn": [
+	    "C++"
+	  ]
+  }
+]

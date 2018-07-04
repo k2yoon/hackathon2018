@@ -11,7 +11,7 @@ import { Go, Search, SearchActionTypes } from '../actions';
 export class SearchEffects {
 
   @Effect()
-  searchProducts$: Observable<Action> = this.actions$
+  searchUsers$: Observable<Action> = this.actions$
     .pipe(
       ofType<Search>(SearchActionTypes.Search),
       map(action => action.payload.params),

@@ -1,0 +1,27 @@
+<div class="wrapper"
+     fxLayout="column"
+     fxLayout.gt-md="row-reverse">
+     <nga-target-detail
+     fxFlex="auto"
+     fxFlex.gt-md="50%"
+     *ngIf="target$ | async as target"
+     [target]="target"
+     [userId]="userId">
+ </nga-target-detail>
+    <nga-target-suggestion
+        fxFlex="auto"
+        fxFlex.gt-md="50%"
+        *ngIf="suggestedTargets$ | async as targets"
+        [targets]="targets"
+        [userId]="userId">
+    </nga-target-suggestion>
+    
+
+  <!-- <nga-target-suggestion
+      fxFlex="auto"
+      fxFlex.gt-md="35%"
+      *ngIf="suggestedTargets$ | async as targets"
+      [targets]="targets">
+  </nga-target-suggestion> -->
+
+</div>

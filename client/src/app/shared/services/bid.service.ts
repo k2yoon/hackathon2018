@@ -4,7 +4,7 @@ import { WebSocketSubject } from 'rxjs/websocket';
 import { WS_URL } from '../../app.tokens';
 
 export interface BidMessage {
-  productId: number;
+  userId: number;
   amount: number;
 }
 
@@ -23,7 +23,7 @@ export class BidService {
 
   constructor(@Inject(WS_URL) private readonly wsUrl: string) {}
 
-  placeBid(productId: number, amount: number): void {
-    this.subject.next({ productId, amount });
+  placeBid(userId: number, amount: number): void {
+    this.subject.next({ userId, amount });
   }
 }

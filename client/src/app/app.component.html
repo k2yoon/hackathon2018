@@ -1,36 +1,36 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav>
-    <nga-search-form></nga-search-form>
-  </mat-sidenav>
+    <!-- <mat-sidenav #sidenav>
+      <nga-search-form></nga-search-form>
+    </mat-sidenav> -->
 
-  <mat-toolbar class="toolbar">
-    <button mat-icon-button
-            class="toolbar__icon-button"
-            (click)="sidenav.toggle()">
-      <mat-icon>search</mat-icon>
-    </button>
+    <mat-toolbar class="toolbar">
+      <!-- <button mat-icon-button
+              class="toolbar__icon-button"
+              (click)="sidenav.toggle()">
+        <mat-icon>search</mat-icon>
+      </button> -->
 
-    <div class="toolbar__logo-title-group"
-         fxLayout
-         fxLayoutAlign="center center">
-      <a routerLink="/"
-         fxLayout>
-        <img class="toolbar__logo"
-             src="/assets/logo.svg"
-             alt="NgAuction Logo">
-      </a>
-      <a class="toolbar__title"
-         routerLink="/">NgAuction</a>
-    </div>
+      <div class="toolbar__logo-title-group"
+           fxLayout
+           fxLayoutAlign="center center">
+        <a routerLink="/"
+           fxLayout>
+          <img class="toolbar__logo"
+               src="/assets/tinder_logo.jpg"
+               alt="NgAuction Logo">
+        </a>
+        <a class="toolbar__title"
+           routerLink="/">Find Your Code Mate</a>
+      </div>
 
-    <div fxFlex></div>
+      <div fxFlex></div>
 
-    <button mat-icon-button
-            class="toolbar__icon-button
-                   toolbar__shopping-cart-button">
-      <mat-icon>shopping_cart</mat-icon>
-    </button>
-  </mat-toolbar>
+      <button mat-icon-button
+              class="toolbar__icon-button
+                     toolbar__shopping-cart-button">
+        <mat-icon>supervisor_account</mat-icon>
+      </button>
+    </mat-toolbar>
 
-  <router-outlet></router-outlet>
-</mat-sidenav-container>
+    <router-outlet></router-outlet>
+  </mat-sidenav-container>

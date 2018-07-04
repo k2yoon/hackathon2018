@@ -3,13 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Product } from '../../shared/services';
+import { User } from '../../shared/services';
 import {
   getCategoriesData,
-  getProductsData,
+  getUsersData,
   LoadCategories,
-  LoadProducts,
-  LoadProductsByCategory,
+  LoadUsers,
+  LoadUsersByCategory,
   State
 } from '../store';
 
@@ -21,20 +21,20 @@ import {
 })
 export class CategoriesComponent implements OnDestroy {
   readonly categories$: Observable<string[]>;
-  readonly products$: Observable<Product[]>;
-  private readonly productsSubscription: Subscription;
+  readonly users$: Observable<User[]>;
+  private readonly usersSubscription: Subscription;
 
   constructor(
     private route: ActivatedRoute,
     private store: Store<State>
   ) {
-    this.products$ = this.store.pipe(select(getProductsData));
+    this.users$ = this.store.pipe(select(getUsersData));
     this.categories$ = this.store.pipe(
       select(getCategoriesData),
       map(categories => [ 'all', ...categories ])
     );
 
-    this.productsSubscription = this.route.params.subscribe(
+    this.usersSubscription = this.route.params.subscribe(
       ({ category }) => this.getCategory(category)
     );
 
@@ -42,12 +42,12 @@ export class CategoriesComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.productsSubscription.unsubscribe();
+    this.usersSubscription.unsubscribe();
   }
 
   private getCategory(category: string): void {
     return category.toLowerCase() === 'all'
-      ? this.store.dispatch(new LoadProducts())
-      : this.store.dispatch(new LoadProductsByCategory({ category: category.toLowerCase() }));
+      ? this.store.dispatch(new LoadUsers())
+      : this.store.dispatch(new LoadUsersByCategory({ category: category.toLowerCase() }));
   }
 }
